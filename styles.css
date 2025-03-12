@@ -13,15 +13,57 @@
   --light-gray: #f8f9fa;
   --border-radius: 16px;
   --safe-area-inset-bottom: env(safe-area-inset-bottom, 0px);
+  --mobile-width: 430px;
+}
+
+/* Hide scrollbar for Chrome, Safari, and Opera */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+html {
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Hide scrollbar for IE and Edge */
+html {
+  -ms-overflow-style: none;
 }
 
 body {
   font-family: "Inter", sans-serif;
   line-height: 1.6;
   color: var(--text-color);
-  background-color: var(--light-gray);
-  padding-bottom: calc(60px + var(--safe-area-inset-bottom));
+  background-color: #f0f2f5;
   -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
+  overflow: hidden; /* Prevent body scrolling */
+}
+
+.mobile-container {
+  width: 100%;
+  max-width: var(--mobile-width);
+  min-height: 100vh;
+  height: 100vh;
+  background-color: var(--light-gray);
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden; /* Change to hidden to prevent double scrolling */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: calc(var(--mobile-width) + 1px)) {
+  .mobile-container {
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+  }
 }
 
 /* Status Bar */
@@ -72,7 +114,19 @@ body {
 /* Main Content Area */
 .app-content {
   padding: 15px;
-  padding-bottom: 80px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow-y: auto; /* Only allow scrolling here */
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 80px; /* Adjust this value as needed */
 }
 
 /* Balance Card */
@@ -280,13 +334,14 @@ body {
   position: fixed;
   bottom: 0;
   left: 0;
-  right: 0;
+  width: 100%;
   background: white;
   display: flex;
   justify-content: space-around;
   padding: 10px 0;
   padding-bottom: calc(10px + var(--safe-area-inset-bottom));
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+  z-index: 100;
 }
 
 .bottom-navbar .nav-item {
@@ -341,10 +396,14 @@ body {
 }
 
 /* Chat Toggle Button */
-.chat-toggle {
+.chat-toggle-wrapper {
   position: fixed;
-  bottom: 80px;
+  bottom: 70px; /* Adjust this value if your navbar height changes */
   right: 20px;
+  z-index: 110;
+}
+
+.chat-toggle {
   width: 56px;
   height: 56px;
   border-radius: 28px;
@@ -361,25 +420,21 @@ body {
   transition: transform 0.2s ease;
 }
 
-.chat-toggle:active {
-  transform: scale(0.95);
-}
-
 /* Chat Interface */
 .chat-interface {
   position: fixed;
-  bottom: 80px;
-  right: 20px;
+  bottom: 70px; /* Adjust the vertical offset as needed */
+  left: 50%;
+  transform: translateX(-50%);
   width: calc(100% - 40px);
-  max-width: 380px;
-  height: 480px;
+  max-width: calc(var(--mobile-width) - 40px);
+  height: 800px;
   background: white;
   border-radius: 20px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  display: flex;
-  flex-direction: column;
-  z-index: 99;
   display: none; /* Hidden by default */
+  flex-direction: column;
+  z-index: 200; /* Make sure it's above other elements */
 }
 
 .chat-interface.active {
@@ -532,4 +587,38 @@ body {
   .chat-toggle {
     bottom: 70px;
   }
+}
+
+/* Container for the fixed bottom elements matching mobile view width */
+.fixed-bottom-container {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 430px;  /* Adjust to match your mobile container width */
+  pointer-events: none;  /* Let child elements receive pointer events */
+}
+
+.fixed-bottom-container > * {
+  pointer-events: auto;
+}
+
+/* Bottom Navigation inside fixed container */
+.fixed-bottom-container .bottom-navbar {
+  background: white;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  padding-bottom: calc(10px + var(--safe-area-inset-bottom));
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  /* Remove any conflicting positioning properties */
+}
+
+/* Chat Toggle Button positioned within the container */
+.fixed-bottom-container .chat-toggle-wrapper {
+  position: absolute;
+  right: 20px; /* This will ensure it's aligned with the container's right edge */
+  bottom: calc(10px + var(--safe-area-inset-bottom) + 70px);  /* Adjust based on the navbar height */
 }

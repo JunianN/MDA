@@ -23,218 +23,227 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!-- Status Bar -->
-    <div class="status-bar">
-      <div class="status-bar-time">9:41</div>
-      <div class="status-bar-icons">
-        <i class="fas fa-signal"></i>
-        <i class="fas fa-wifi"></i>
-        <i class="fas fa-battery-full"></i>
+    <div class="mobile-container">
+      <!-- Status Bar -->
+      <div class="status-bar">
+        <div class="status-bar-time">9:41</div>
+        <div class="status-bar-icons">
+          <i class="fas fa-signal"></i>
+          <i class="fas fa-wifi"></i>
+          <i class="fas fa-battery-full"></i>
+        </div>
+      </div>
+
+      <!-- Top Navigation -->
+      <nav class="top-navbar">
+        <div class="nav-brand">
+          <img src="placeholder-logo.svg" alt="Livin' Sukha" class="logo" />
+        </div>
+        <div class="nav-actions">
+          <button class="btn-notifications">
+            <i class="fas fa-bell"></i>
+          </button>
+          <button class="btn-profile">
+            <i class="fas fa-user"></i>
+          </button>
+        </div>
+      </nav>
+
+      <div class="content-wrapper">
+        <!-- Main Content -->
+        <main class="app-content">
+          <!-- Balance Card -->
+          <section class="balance-card">
+            <div class="balance-info">
+              <span class="balance-label">Total Balance</span>
+              <h2 class="balance-amount">Rp 12,500,000</h2>
+              <span class="account-number">**** 8942</span>
+            </div>
+            <button class="btn-view-details">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </section>
+
+          <!-- Quick Actions -->
+          <section class="quick-actions">
+            <div class="action-card">
+              <i class="fas fa-exchange-alt"></i>
+              <span>Transfer</span>
+            </div>
+            <div class="action-card">
+              <i class="fas fa-ticket-alt"></i>
+              <span>Tickets</span>
+            </div>
+            <div class="action-card">
+              <i class="fas fa-gift"></i>
+              <span>Vouchers</span>
+            </div>
+            <div class="action-card">
+              <i class="fas fa-percent"></i>
+              <span>Promos</span>
+            </div>
+          </section>
+
+          <!-- Shopping Assistant Section -->
+          <section class="shopping-assistant">
+            <div class="section-header">
+              <h2>Shopping Assistant</h2>
+              <a href="#" class="view-all">View History</a>
+            </div>
+            <div class="shopping-categories">
+              <div class="category-card">
+                <i class="fas fa-tshirt"></i>
+                <span>Fashion</span>
+              </div>
+              <div class="category-card">
+                <i class="fas fa-mobile-alt"></i>
+                <span>Electronics</span>
+              </div>
+              <div class="category-card">
+                <i class="fas fa-utensils"></i>
+                <span>Food</span>
+              </div>
+              <div class="category-card">
+                <i class="fas fa-plane"></i>
+                <span>Travel</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- SukhaTV Section -->
+          <section class="sukha-tv">
+            <div class="section-header">
+              <h2>SukhaTV</h2>
+              <a href="#" class="view-all">View All</a>
+            </div>
+            <div class="content-scroll">
+              <div class="tv-card featured">
+                <div class="card-image">
+                  <span class="live-badge">LIVE</span>
+                </div>
+                <div class="card-content">
+                  <h3>Live Concert</h3>
+                  <p>Watch Now</p>
+                </div>
+              </div>
+              <div class="tv-card">
+                <div class="card-image"></div>
+                <div class="card-content">
+                  <h3>Flash Sale</h3>
+                  <p>2 hours left</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- SukhaReels Section -->
+          <section class="sukha-reels">
+            <div class="section-header">
+              <h2>SukhaReels</h2>
+              <a href="#" class="view-all">View All</a>
+            </div>
+            <div class="reels-scroll">
+              <div class="reel-card">
+                <div class="reel-preview">
+                  <div class="reel-overlay">
+                    <i class="fas fa-play"></i>
+                  </div>
+                </div>
+                <p>Fashion Tips</p>
+              </div>
+              <div class="reel-card">
+                <div class="reel-preview">
+                  <div class="reel-overlay">
+                    <i class="fas fa-play"></i>
+                  </div>
+                </div>
+                <p>Tech Review</p>
+              </div>
+              <div class="reel-card">
+                <div class="reel-preview">
+                  <div class="reel-overlay">
+                    <i class="fas fa-play"></i>
+                  </div>
+                </div>
+                <p>Travel Guide</p>
+              </div>
+            </div>
+          </section>
+        </main>
+
+        <!-- Chat Interface -->
+        <div class="chat-interface" id="chatInterface">
+          <div class="chat-header">
+            <div class="chat-title">
+              <i class="fas fa-robot"></i>
+              <span>Shopping Assistant</span>
+            </div>
+            <button class="btn-close-chat">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <div class="chat-messages">
+            <div class="message bot">
+              <div class="message-content">
+                Hi! I'm your shopping assistant. I can help you find the best deals
+                and recommendations. What are you looking for today?
+              </div>
+            </div>
+            <div class="message bot">
+              <div class="message-content">
+                You can ask me about: • Product recommendations • Price comparisons
+                • Deal alerts • Shopping tips
+              </div>
+            </div>
+          </div>
+          <div class="chat-suggestions">
+            <button class="suggestion-chip">Best deals today</button>
+            <button class="suggestion-chip">Fashion trends</button>
+            <button class="suggestion-chip">Tech gadgets</button>
+          </div>
+          <div class="chat-input">
+            <input type="text" placeholder="Type your question..." />
+            <button class="btn-send">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Fixed bottom container matching your mobile view -->
+        <div class="fixed-bottom-container">
+          <!-- Bottom Navigation -->
+          <nav class="bottom-navbar">
+            <a href="#" class="nav-item active">
+              <i class="fas fa-home"></i>
+              <span>Home</span>
+            </a>
+            <a href="#" class="nav-item">
+              <i class="fas fa-tv"></i>
+              <span>SukhaTV</span>
+            </a>
+            <a href="#" class="nav-item">
+              <i class="fas fa-play-circle"></i>
+              <span>Reels</span>
+            </a>
+            <a href="#" class="nav-item">
+              <i class="fas fa-newspaper"></i>
+              <span>News</span>
+            </a>
+            <a href="#" class="nav-item">
+              <i class="fas fa-wallet"></i>
+              <span>Banking</span>
+            </a>
+          </nav>
+
+          <!-- Chat Toggle Button -->
+          <div class="chat-toggle-wrapper">
+            <button class="chat-toggle" id="chatToggle">
+              <i class="fas fa-comment"></i>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
-
-    <!-- Top Navigation -->
-    <nav class="top-navbar">
-      <div class="nav-brand">
-        <img src="placeholder-logo.svg" alt="Livin' Sukha" class="logo" />
-      </div>
-      <div class="nav-actions">
-        <button class="btn-notifications">
-          <i class="fas fa-bell"></i>
-        </button>
-        <button class="btn-profile">
-          <i class="fas fa-user"></i>
-        </button>
-      </div>
-    </nav>
-
-    <!-- Main Content Area -->
-    <main class="app-content">
-      <!-- Balance Card -->
-      <section class="balance-card">
-        <div class="balance-info">
-          <span class="balance-label">Total Balance</span>
-          <h2 class="balance-amount">Rp 12,500,000</h2>
-          <span class="account-number">**** 8942</span>
-        </div>
-        <button class="btn-view-details">
-          <i class="fas fa-chevron-right"></i>
-        </button>
-      </section>
-
-      <!-- Quick Actions -->
-      <section class="quick-actions">
-        <div class="action-card">
-          <i class="fas fa-exchange-alt"></i>
-          <span>Transfer</span>
-        </div>
-        <div class="action-card">
-          <i class="fas fa-ticket-alt"></i>
-          <span>Tickets</span>
-        </div>
-        <div class="action-card">
-          <i class="fas fa-gift"></i>
-          <span>Vouchers</span>
-        </div>
-        <div class="action-card">
-          <i class="fas fa-percent"></i>
-          <span>Promos</span>
-        </div>
-      </section>
-
-      <!-- Shopping Assistant Section -->
-      <section class="shopping-assistant">
-        <div class="section-header">
-          <h2>Shopping Assistant</h2>
-          <a href="#" class="view-all">View History</a>
-        </div>
-        <div class="shopping-categories">
-          <div class="category-card">
-            <i class="fas fa-tshirt"></i>
-            <span>Fashion</span>
-          </div>
-          <div class="category-card">
-            <i class="fas fa-mobile-alt"></i>
-            <span>Electronics</span>
-          </div>
-          <div class="category-card">
-            <i class="fas fa-utensils"></i>
-            <span>Food</span>
-          </div>
-          <div class="category-card">
-            <i class="fas fa-plane"></i>
-            <span>Travel</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- SukhaTV Section -->
-      <section class="sukha-tv">
-        <div class="section-header">
-          <h2>SukhaTV</h2>
-          <a href="#" class="view-all">View All</a>
-        </div>
-        <div class="content-scroll">
-          <div class="tv-card featured">
-            <div class="card-image">
-              <span class="live-badge">LIVE</span>
-            </div>
-            <div class="card-content">
-              <h3>Live Concert</h3>
-              <p>Watch Now</p>
-            </div>
-          </div>
-          <div class="tv-card">
-            <div class="card-image"></div>
-            <div class="card-content">
-              <h3>Flash Sale</h3>
-              <p>2 hours left</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- SukhaReels Section -->
-      <section class="sukha-reels">
-        <div class="section-header">
-          <h2>SukhaReels</h2>
-          <a href="#" class="view-all">View All</a>
-        </div>
-        <div class="reels-scroll">
-          <div class="reel-card">
-            <div class="reel-preview">
-              <div class="reel-overlay">
-                <i class="fas fa-play"></i>
-              </div>
-            </div>
-            <p>Fashion Tips</p>
-          </div>
-          <div class="reel-card">
-            <div class="reel-preview">
-              <div class="reel-overlay">
-                <i class="fas fa-play"></i>
-              </div>
-            </div>
-            <p>Tech Review</p>
-          </div>
-          <div class="reel-card">
-            <div class="reel-preview">
-              <div class="reel-overlay">
-                <i class="fas fa-play"></i>
-              </div>
-            </div>
-            <p>Travel Guide</p>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <!-- AI Chat Interface -->
-    <div class="chat-interface" id="chatInterface">
-      <div class="chat-header">
-        <div class="chat-title">
-          <i class="fas fa-robot"></i>
-          <span>Shopping Assistant</span>
-        </div>
-        <button class="btn-close-chat">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-      <div class="chat-messages">
-        <div class="message bot">
-          <div class="message-content">
-            Hi! I'm your shopping assistant. I can help you find the best deals
-            and recommendations. What are you looking for today?
-          </div>
-        </div>
-        <div class="message bot">
-          <div class="message-content">
-            You can ask me about: • Product recommendations • Price comparisons
-            • Deal alerts • Shopping tips
-          </div>
-        </div>
-      </div>
-      <div class="chat-suggestions">
-        <button class="suggestion-chip">Best deals today</button>
-        <button class="suggestion-chip">Fashion trends</button>
-        <button class="suggestion-chip">Tech gadgets</button>
-      </div>
-      <div class="chat-input">
-        <input type="text" placeholder="Type your question..." />
-        <button class="btn-send">
-          <i class="fas fa-paper-plane"></i>
-        </button>
-      </div>
-    </div>
-
-    <!-- Chat Toggle Button -->
-    <button class="chat-toggle" id="chatToggle">
-      <i class="fas fa-comments"></i>
-    </button>
-
-    <!-- Bottom Navigation -->
-    <nav class="bottom-navbar">
-      <a href="#" class="nav-item active">
-        <i class="fas fa-home"></i>
-        <span>Home</span>
-      </a>
-      <a href="#" class="nav-item">
-        <i class="fas fa-tv"></i>
-        <span>SukhaTV</span>
-      </a>
-      <a href="#" class="nav-item">
-        <i class="fas fa-play-circle"></i>
-        <span>Reels</span>
-      </a>
-      <a href="#" class="nav-item">
-        <i class="fas fa-newspaper"></i>
-        <span>News</span>
-      </a>
-      <a href="#" class="nav-item">
-        <i class="fas fa-wallet"></i>
-        <span>Banking</span>
-      </a>
-    </nav>
 
     <script src="data-manager.js"></script>
     <script src="script.js"></script>

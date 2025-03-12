@@ -23,6 +23,17 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <!-- Login Screen -->
+    <div class="login-container" id="loginContainer">
+      <div class="login-form">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Username" />
+        <input type="password" id="password" placeholder="Password" />
+        <button id="loginButton">Login</button>
+        <div id="loginErrorMessage"></div>
+      </div>
+    </div>
+
     <div class="mobile-container">
       <!-- Status Bar -->
       <div class="status-bar">
@@ -246,6 +257,7 @@
     </div>
 
     <script src="data-manager.js"></script>
+    <script src="auth.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

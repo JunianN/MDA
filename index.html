@@ -23,14 +23,33 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!-- Login Screen -->
+    <!-- Login & Register Container -->
     <div class="login-container" id="loginContainer">
-      <div class="login-form">
+      <!-- Login Form -->
+      <div class="login-form" id="loginForm">
         <h2>Login</h2>
-        <input type="text" id="username" placeholder="Username" />
-        <input type="password" id="password" placeholder="Password" />
+        <input type="text" id="loginUsername" placeholder="Username" />
+        <input type="password" id="loginPassword" placeholder="Password" />
         <button id="loginButton">Login</button>
         <div id="loginErrorMessage"></div>
+        <p>
+          Don't have an account?
+          <a href="#" id="showRegister">Register here</a>
+        </p>
+      </div>
+
+      <!-- Register Form -->
+      <div class="register-form" id="registerForm" style="display: none;">
+        <h2>Register</h2>
+        <input type="text" id="registerUsername" placeholder="Username" />
+        <input type="password" id="registerPassword" placeholder="Password" />
+        <input type="password" id="registerConfirmPassword" placeholder="Confirm Password" />
+        <button id="registerButton">Sign Up</button>
+        <div id="registerErrorMessage"></div>
+        <p>
+          Already have an account?
+          <a href="#" id="showLogin">Login here</a>
+        </p>
       </div>
     </div>
 
